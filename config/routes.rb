@@ -3,4 +3,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  resources :recipes, only: [:index, :new, :create, :show, :destroy, :put]
+
+  match 'recipes/:recipe_id' => 'recipes#toggle_public', as: :toggle_public, via: :patch
 end
