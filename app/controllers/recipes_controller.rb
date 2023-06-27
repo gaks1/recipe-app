@@ -11,7 +11,7 @@ class RecipesController < ApplicationController
       redirect_to recipes_path, notice: 'Your Recipe is created successfully 🎉'
     else
       flash[:alert] = 'Something went wrong, try again!!'
-      redirect_to recipes_path
+      redirect_to recipe_path(@recipe.id)
     end
   end
 
