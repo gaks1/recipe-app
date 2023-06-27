@@ -1,3 +1,4 @@
+
 # Seed data for users table
 User.create(name: "John Doe")
 User.create(name: "Jane Smith")
@@ -16,3 +17,11 @@ RecipeFood.create(quantity: 2, recipe: Recipe.first, food: Food.first)
 RecipeFood.create(quantity: 3, recipe: Recipe.first, food: Food.second)
 RecipeFood.create(quantity: 4, recipe: Recipe.second, food: Food.second)
 RecipeFood.create(quantity: 2, recipe: Recipe.second, food: Food.third)
+
+first_user = User.create(name: 'Raihan')
+second_user = User.create(name: 'Isaac')
+
+first_recipe = Recipe.create(name: 'Recipe 1', preparation_time: 1, cooking_time: 2, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nibh massa, suscipit tristique risus ac, pellentesque aliquet leo. Maecenas maximus vestibulum purus id dictum. Nullam laoreet lacus turpis. Fusce eget nulla sit amet turpis blandit laoreet. Vestibulum rhoncus velit at scelerisque interdum. Proin at nisl semper, maximus enim et, finibus tellus. Duis nec nunc non lorem dictum euismod quis ac dolor. Sed tempus elementum elit, sed rhoncus neque interdum ut. Mauris nisl justo, condimentum in porttitor vel, maximus nec purus. In nec augue lectus.', public: true, user: first_user)
+
+second_recipe = Recipe.create(name: 'Recipe 2', preparation_time: 1, cooking_time: 2, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nibh massa, suscipit tristique risus ac, pellentesque aliquet leo. Maecenas maximus vestibulum purus id dictum. Nullam laoreet lacus turpis. Fusce eget nulla sit amet turpis blandit laoreet. Vestibulum rhoncus velit at scelerisque interdum. Proin at nisl semper, maximus enim et, finibus tellus. Duis nec nunc non lorem dictum euismod quis ac dolor. Sed tempus elementum elit, sed rhoncus neque interdum ut. Mauris nisl justo, condimentum in porttitor vel, maximus nec purus. In nec augue lectus.', public: true, user: second_user)
+
