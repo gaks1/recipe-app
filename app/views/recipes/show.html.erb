@@ -21,4 +21,34 @@
       <% end %>
     <div>
   </div>
+    <div class="btn-group row">
+      <a href= <%= "/general_shopping_list" %>>
+        <button class="btn-bg-red-big ">Generate Shopping List</button>
+      </a>
+      <a href= <%= "/recipes/#{@recipe.id}/recipe_foods/new" %>>
+        <button class="btn-bg-red-big ">Add Ingredient</button>
+      </a>
+  </div>
+
+  <table class="table">
+    <tr>
+      <th>Food</th>
+      <th>Quantity</th>
+      <th>Value</th>
+      <th>Actions</th>
+    </tr>
+    <% @ingredients.each do |recipe_food| %>
+      <tr>
+        <td><%= recipe_food.food.name %></td>
+        <td><%= recipe_food.quantity %> <%= recipe_food.food.measurement_unit %></td>
+        <td>$ <%= recipe_food.food.price %></td>
+        <td>
+          <div class="table_actions">
+            <%= link_to "Modify", edit_recipe_recipe_food_path(recipe_id: @recipe.id, id: recipe_food.id), class: "btn btn-modify" %>
+            <%= button_to "Remove", recipe_recipe_food_path(recipe_id: @recipe.id, id: recipe_food.id), class: "btn btn-danger", method: :delete %>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </table>
 </article>

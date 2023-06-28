@@ -47,12 +47,13 @@ class RecipeFoodsController < ApplicationController
 
   # DELETE /recipe_foods/1 or /recipe_foods/1.json
   def destroy
-    @recipe_food.destroy
-
-    respond_to do |format|
-      format.html { redirect_to recipe_foods_url, notice: 'Recipe food was successfully destroyed.' }
-      format.json { head :no_content }
+    @recipe_food = RecipeFood.find_by_id(params[:id])
+    if @recipe_food.destroy
+      flash[:noticw] = 'Ingedient deleted.'
+    else
+      flash[:alert] = 'Ingedient deletion unsucessful.'
     end
+    redirect_to recipe_path(params[:recipe_id])
   end
 
   private
