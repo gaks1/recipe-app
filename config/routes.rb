@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   match 'recipes/:recipe_id' => 'recipes#toggle_public', as: :toggle_public, via: :patch
   get 'recipes/:recipe_id/new_ingredient' , to: 'recipes#new_ingredient' , as: :new_ingredient
   post 'recipes/:recipe_id/new_ingredient' , to: 'recipes#create_ingredient' , as: :create_ingredient
+  get "public_recipes", to: "public_recipes#index"
 end
