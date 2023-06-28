@@ -22,12 +22,8 @@
     <div>
   </div>
     <div class="btn-group row">
-      <a href= <%= "/general_shopping_list" %>>
-        <button class="btn-bg-red-big ">Generate Shopping List</button>
-      </a>
-      <a href= <%= "/recipes/#{@recipe.id}/recipe_foods/new" %>>
-        <button class="btn-bg-red-big ">Add Ingredient</button>
-      </a>
+    <%= button_to "Generate shopping list", general_shopping_list_path, method: :get, class: "btn btn-danger"  %>
+    <%= button_to "Add ingredients", new_ingredient_path(@recipe), method: :get, class: "btn btn-success"  %>
   </div>
 
   <table class="table">

@@ -1,0 +1,26 @@
+<h1>shopping List</h1>
+<div class="container">
+<div class="row">
+<p>
+Amount of food items to buy: <%= @shopping_list.length %>
+<p>
+Total value of food needed: $<%= @total_value %>
+</p>
+</div>
+<div class="row">
+<table class="table">
+    <tr>
+        <th>Food</th>
+        <th>Quantity</th>
+        <th>Price</th>
+    </tr>
+    <% @shopping_list.each_value do |item| %>
+        <tr>
+          <td><%= item[:food].name %></td>
+          <td><%= item[:quantity] %></td>
+          <td><%= item[:food].price * item[:quantity] %></td>
+        </tr>
+      <% end %>
+    </table>
+    </div>
+</div>
