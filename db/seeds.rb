@@ -4,9 +4,9 @@ User.create(name: "John Doe")
 User.create(name: "Jane Smith")
 
 # Seed data for foods table
-Food.create(name: "Apple", measurement_unit: "piece", price: 0.99, quantity: 10, user: User.first)
-Food.create(name: "Banana", measurement_unit: "piece", price: 0.75, quantity: 15, user: User.first)
-Food.create(name: "Chicken", measurement_unit: "kg", price: 8.99, quantity: 5, user: User.second)
+Food.create(name: "Apple", measurement_unit: "piece", price: 10, quantity: 1, user: User.first)
+Food.create(name: "Banana", measurement_unit: "piece", price: 15, quantity: 1, user: User.first)
+Food.create(name: "Chicken", measurement_unit: "kg", price: 20, quantity: 5, user: User.second)
 
 # Seed data for recipes table
 Recipe.create(name: "Apple Pie", preparation_time: 30, cooking_time: 60, description: "Delicious apple pie recipe", public: true, user: User.first)
