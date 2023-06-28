@@ -48,16 +48,17 @@ class RecipesController < ApplicationController
     @current_user = current_user
     @recipe = Recipe.find(params[:recipe_id])
     @food = @current_user.foods.build(food_params.except(:recipe_foods_attributes))
-  
+
     puts @food.inspect
     if @food.save
-      @recipe_food = @food.recipe_foods.build(recipe: @recipe, quantity: food_params[:recipe_foods_attributes]["0"][:quantity])
-      
+      @recipe_food = @food.recipe_foods.build(recipe: @recipe,
+                                              quantity: food_params[:recipe_foods_attributes]['0'][:quantity])
+
       if @recipe_food.save
         redirect_to recipe_path(@recipe), notice: 'Your Recipe is created successfully 🎉'
       else
         flash[:alert] = 'Something went wrong, try again!!'
-        puts @recipe_food.errors.full_messages 
+        puts @recipe_food.errors.full_messages
         render :new_ingredient
       end
     else
@@ -66,8 +67,8 @@ class RecipesController < ApplicationController
       render :new_ingredient
     end
   end
-  
-  
+
+
 
   private
 
