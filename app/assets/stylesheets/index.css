@@ -31,8 +31,8 @@ a {
   color: initial;
   padding: 1rem;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   width: 60%;
   margin: 0 auto;
+  gap: 1rem;
 }
