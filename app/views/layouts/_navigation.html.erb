@@ -1,0 +1,16 @@
+<header class="header">
+  <%= link_to "RecipeWise", root_path, class: 'brand-name' %>
+  <nav class="navbar">
+      <ul class="nav-items">
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "Foods", foods_path %></li>
+        <li><%= link_to "Recipes", recipes_path %></li>
+        <li><%= link_to "Public Recipe", public_recipes_path %></li>
+      </ul>
+      <% if current_user %>
+      <%= button_to "Log Out", destroy_user_session_path,  method: :delete, class: 'user_action' %>
+      <% else %>
+        <%= link_to "Log in", '/users/sign_in', class: "user_action" %>
+    <% end %>
+  </nav>
+</header>
