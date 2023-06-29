@@ -11,7 +11,9 @@ body {
   background-color: #9b420385;
 }
 
-table, td, th {  
+table,
+td,
+th {
   border: 1px solid #ddd;
   text-align: left;
 }
