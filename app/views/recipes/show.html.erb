@@ -40,8 +40,12 @@
         <td>$ <%= recipe_food.food.price %></td>
         <td>
           <div class="table_actions">
+          <% if can? :update, recipe_food %>
             <%= link_to "Modify", edit_recipe_recipe_food_path(recipe_id: @recipe.id, id: recipe_food.id), class: "btn btn-modify" %>
+            <% end %>
+            <% if can? :destroy, recipe_food %>
             <%= button_to "Remove", recipe_recipe_food_path(recipe_id: @recipe.id, id: recipe_food.id), class: "btn btn-danger", method: :delete %>
+            <% end %>
           </div>
         </td>
       </tr>

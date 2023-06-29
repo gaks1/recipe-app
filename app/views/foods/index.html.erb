@@ -19,5 +19,6 @@
   </tbody>
   </table>
 </div>
-
+<% if can? :create, Food %>
 <%= link_to "Add food", new_food_path %>
+<% end %>
