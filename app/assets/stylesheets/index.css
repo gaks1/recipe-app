@@ -95,3 +95,16 @@ a {
   margin: 0 auto;
   gap: 1rem;
 }
+
+.login-form {
+  width: 60%;
+  margin: 0 auto;
+  padding: 1rem;
+  border: 1px solid #888;
+}
+
+.login-input {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+}
