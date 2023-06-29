@@ -2,7 +2,9 @@
        <td><%= food.name %></td>
        <td><%= food.measurement_unit %></td>
        <td><%= food.price %></td>
+       <% if can? :destroy, food %>
        <td><%= link_to "delete", food_path(food), method: :delete %></td>
+       <% end %>
 </tr>
 
 
