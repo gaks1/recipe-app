@@ -1,9 +1,9 @@
-<h1>New food</h1>
+<h1 style="text-align: center; margin: 40px;">New food</h1>
 
 <%= render "form", food: @food %>
 
 <br>
 
-<div>
-  <%= link_to "Back to foods", foods_path %>
+<div class="back-to-foods-div">
+  <%= link_to "Back to foods", foods_path, class: "back-to-foods-link" %>
 </div>

@@ -1,9 +1,12 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Foods</h1>
-
+<div class="add-food-div">
+<% if can? :create, Food %>
+<%= link_to "Add food", new_food_path, class:'add-food-button' %>
+<% end %>
+</div>
 <div id="foods">
-<table>
+<table class="food-table">
   <thead>
     <tr>
       <th>Name</th>
@@ -19,6 +22,4 @@
   </tbody>
   </table>
 </div>
-<% if can? :create, Food %>
-<%= link_to "Add food", new_food_path %>
-<% end %>
+
