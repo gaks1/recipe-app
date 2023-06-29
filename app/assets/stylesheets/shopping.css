@@ -1,0 +1,15 @@
+.shopping-info-div{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 40px;
+}
+
+.ingredient-form-field{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 25%;
+    height: 30px;
+}
