@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #9b420385;
+}
+
+table,
+td,
+th {
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border-radius: 2px;
+  border: none;
+}
+
+.btn-danger {
+  color: #fff;
+  background: #f00;
+}
+
+.btn-success {
+  color: #fff;
+  background: #4caf50;
+}
+
+.color-red {
+  color: red;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #e15809;
+}
+
+.navbar {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.nav-items {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.brand-name {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.nav-items > li > a {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+}
+
+.nav-items > li > a:hover {
+  background-color: #8e3502;
+}
+
+.user_action {
+  color: #fff;
+  background-color: #8e3502;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 2px;
+}
+
+.section_title {
+  text-align: center;
+  margin: 0.7rem 0;
+  color: #8e3502;
+}
+
+.recipe_items {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  list-style: none;
+  margin: 0 auto;
+}
+
+.recipe_card {
+  text-decoration: none;
+  border: 1px solid #888;
+  color: initial;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  margin: 0 auto;
+  gap: 1rem;
+  background: #fff;
+}
+
+.login-form {
+  width: 60%;
+  margin: 0 auto;
+  padding: 1rem;
+  border: 1px solid #888;
+}
+
+.login-input {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+}

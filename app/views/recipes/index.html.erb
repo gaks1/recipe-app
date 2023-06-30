@@ -1,0 +1,31 @@
+<section>
+  <div class="new_recipe_action">
+    <%= link_to "Add Recipe", new_recipe_path, class:'btn-add_new_recipe' %>
+  </div>
+  <h2 class="section_title">Recipes</h2>
+  <ul class="recipe_items">
+     <% if @recipes.empty? %>
+        <p class="no_item">No Recipe Found</p>
+    <% end %>
+    <% @recipes.each do |recipe| %>
+      <li class="recipe_card">  
+        <div class="recipe_head">
+          <a href=<%= "/recipes/#{recipe.id}" %> class="recipe_name">
+            <h3><%= recipe.name %></h3>
+          </a>
+          <div class="head_action">
+          <% if can? :destroy, recipe %>
+            <%= button_to "Remove", recipe, method: :delete, class: 'btn-danger' %>
+            <% end %>
+          </div>
+        </div>
+        <div class="recipe_des">
+          <a href=<%= "/recipes/#{recipe.id}" %> class="link_description">
+            <p class="text-description"><%= recipe.description %></p>
+          </a>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</section>
+

@@ -1,0 +1,123 @@
+.link_description {
+  color: initial;
+}
+
+.recipe_name {
+  color: #8e3502;
+}
+
+h3 {
+  margin: 0.7rem 0;
+}
+
+.no_item {
+  text-align: center;
+}
+
+.new_recipe_action {
+  display: flex;
+  justify-content: flex-end;
+  margin: 1rem;
+}
+
+.btn-add_new_recipe {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-left: auto;
+}
+
+.recipe_article,
+.recipe_section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.recipe_container {
+  width: 60%;
+}
+
+.article_title {
+  text-align: center;
+  color: #8e3502;
+  margin: 1rem;
+}
+
+.recipe_content {
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+  outline: #4caf50;
+  margin: 1rem 0;
+}
+
+.ingredient_table {
+  display: block;
+}
+
+.recipe_table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.recipe_table th,
+.recipe_table td {
+  padding: 0.675rem 1rem;
+}
+
+.recipe_table th {
+  background-color: #4caf50;
+  color: white;
+}
+
+.recipe_table tr:nth-child(odd) {
+  background-color: #e15809;
+}
+
+.table_actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.recipe_form form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.input_group textarea {
+  width: 100%;
+  min-height: 5rem;
+  padding: 1rem;
+}
+
+.input_group input,
+.input_group select {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.625rem 1rem;
+}
+
+.btn-submit {
+  padding: 0.625rem 1rem;
+  border: none;
+  margin: 1rem 0;
+}
