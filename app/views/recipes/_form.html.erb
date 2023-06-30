@@ -2,7 +2,6 @@
   <% if recipe.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
-
       <ul>
         <% recipe.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -11,22 +10,22 @@
     </div>
   <% end %>
 
-  <div>
+  <div class="input_group">
     <%= form.label :name, style: "display: block" %>
     <%= form.text_field :name, class: "input-default" %>
   </div>
 
-  <div>
+  <div class="input_group">
     <%= form.label :preparation_time, style: "display: block" %>
     <%= form.number_field :preparation_time, class: "input-default" %>
   </div>
 
-  <div>
+  <div class="input_group">
     <%= form.label :cooking_time, style: "display: block" %>
     <%= form.number_field :cooking_time, class: "input-default" %>
   </div>
 
-  <div>
+  <div class="input_group">
     <%= form.label :description, style: "display: block" %>
     <%= form.text_area :description, class: "input-default" %>
   </div>
@@ -37,6 +36,6 @@
   </div>
 
   <div>
-    <%= form.submit class: "btn-bg-red-big" %>
+    <%= form.submit class: "btn-success btn-submit" %>
   </div>
 <% end %>
