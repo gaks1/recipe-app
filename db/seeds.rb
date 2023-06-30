@@ -1,7 +1,7 @@
 
 # Seed data for users table
-User.create(name: "John Doe", email: 'johndoe@gmail.com', password: '123456')
-User.create(name: "Jane Smith", email: 'janesmith@gmail.com', password: '123456')
+User.create(name: "raihan", email: 'raihan1@gmail.com', password: '123456', confirmed_at: Time.now)
+User.create(name: "Jane Smith", email: 'janesmith@gmail.com', password: '123456', confirmed_at: Time.now)
 
 # Seed data for foods table
 Food.create(name: "Apple", measurement_unit: "piece", price: 10, quantity: 1, user: User.first)
