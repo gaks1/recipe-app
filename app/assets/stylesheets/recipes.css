@@ -109,7 +109,7 @@ h3 {
   padding: 1rem;
 }
 
-.input_group input {
+.input_group input, .input_group select {
   width: 100%;
   margin-top: 0.5rem;
   padding: 0.625rem 1rem;

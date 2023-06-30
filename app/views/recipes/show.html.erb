@@ -46,7 +46,7 @@
           <tr>
             <td><%= recipe_food.food.name %></td>
             <td><%= recipe_food.quantity %> <%= recipe_food.food.measurement_unit %></td>
-            <td>$ <%= recipe_food.food.price %></td>
+            <td>$ <%= recipe_food.value %></td>
             <td>
               <div class="table_actions">
               <% if can? :update, @recipe %>
