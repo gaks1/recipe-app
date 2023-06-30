@@ -4,51 +4,62 @@
   </div>
 <% end %>
 <article class="recipe_article">
-  <h2 class="article_title">
-    <%= @recipe.name %>
-  </h2>
-  <div class="recipe_content">
-    <div class="recipe_info">
-      <p>Preparation time: <%= @recipe.preparation_time %><p>
-      <p>Cooking time: <%= @recipe.cooking_time %></p>
-      <p>Step to follow: <%= @recipe.description %></p>
-    </div>
-    <div class="recipe_action">
-      <% if @recipe.public %>
-        <%= button_to "Make private", toggle_public_path(@recipe.id), method: :patch, class: "btn btn-danger"  %>
-      <% else %>
-        <%= button_to "Make public", toggle_public_path(@recipe.id), method: :patch, class: "btn btn-success"  %>
+  <div class="recipe_container">
+    <h2 class="article_title">
+      <%= @recipe.name %>
+    </h2>
+    <div class="recipe_content">
+      <div class="recipe_info">
+        <p>Preparation time: <%= @recipe.preparation_time %><p>
+        <p>Cooking time: <%= @recipe.cooking_time %></p>
+        <p>Step to follow: <%= @recipe.description %></p>
+      </div>
+      <% if can? :update, @recipe %>
+        <div class="recipe_action">
+          <% if @recipe.public %>
+            <%= button_to "Make private", toggle_public_path(@recipe.id), method: :patch, class: "btn btn-danger"  %>
+          <% else %>
+            <%= button_to "Make public", toggle_public_path(@recipe.id), method: :patch, class: "btn btn-success"  %>
+          <% end %>
+        </div>
       <% end %>
-    <div>
-  </div>
-    <div class="btn-group row">
-    <%= button_to "Generate shopping list", general_shopping_list_path, method: :get, class: "btn btn-danger"  %>
-    <%= button_to "Add ingredients", new_ingredient_path(@recipe), method: :get, class: "btn btn-success"  %>
-  </div>
-
-  <table class="table">
-    <tr>
-      <th>Food</th>
-      <th>Quantity</th>
-      <th>Value</th>
-      <th>Actions</th>
-    </tr>
-    <% @ingredients.each do |recipe_food| %>
-      <tr>
-        <td><%= recipe_food.food.name %></td>
-        <td><%= recipe_food.quantity %> <%= recipe_food.food.measurement_unit %></td>
-        <td>$ <%= recipe_food.food.price %></td>
-        <td>
-          <div class="table_actions">
-          <% if can? :update, recipe_food %>
-            <%= link_to "Modify", edit_recipe_recipe_food_path(recipe_id: @recipe.id, id: recipe_food.id), class: "btn btn-modify" %>
-            <% end %>
-            <% if can? :destroy, recipe_food %>
-            <%= button_to "Remove", recipe_recipe_food_path(recipe_id: @recipe.id, id: recipe_food.id), class: "btn btn-danger", method: :delete %>
-            <% end %>
-          </div>
-        </td>
-      </tr>
+    </div>
+    <% if can? :update, @recipe %>
+      <div class="btn-group row">
+        <%= button_to "Generate shopping list", general_shopping_list_path, method: :get, class: "btn btn-danger"  %>
+        <%= button_to "Add ingredients", new_ingredient_path(@recipe), method: :get, class: "btn btn-success"  %>
+      </div>
     <% end %>
-  </table>
+
+    <% if @ingredients.empty? %>
+        <p class="no_item">No Ingredients Found! Please Add a new one.</p>
+    
+    <% else %>
+      <table class="recipe_table">
+        <tr>
+          <th>Food</th>
+          <th>Quantity</th>
+          <th>Value</th>
+          <th>Actions</th>
+        </tr>
+        <% @ingredients.each do |recipe_food| %>
+          <tr>
+            <td><%= recipe_food.food.name %></td>
+            <td><%= recipe_food.quantity %> <%= recipe_food.food.measurement_unit %></td>
+            <td>$ <%= recipe_food.value %></td>
+            <td>
+              <div class="table_actions">
+              <% if can? :update, @recipe %>
+                <%= link_to "Modify", edit_recipe_recipe_food_path(recipe_id: @recipe.id, id: recipe_food.id), class: "btn btn-modify" %>
+                <% end %>
+                <% if can? :destroy, @recipe %>
+                <%= button_to "Remove", recipe_recipe_food_path(recipe_id: @recipe.id, id: recipe_food.id), class: "btn btn-danger", method: :delete %>
+                <% end %>
+              </div>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    <% end %>
+  </div>
 </article>

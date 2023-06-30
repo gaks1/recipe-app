@@ -11,8 +11,31 @@ body {
   background-color: #9b420385;
 }
 
+table,
+td,
+th {
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
 a {
   text-decoration: none;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border-radius: 2px;
+  border: none;
+}
+
+.btn-danger {
+  color: #fff;
+  background: #f00;
+}
+
+.btn-success {
+  color: #fff;
+  background: #4caf50;
 }
 
 .color-red {
@@ -67,6 +90,7 @@ a {
 .section_title {
   text-align: center;
   margin: 0.7rem 0;
+  color: #8e3502;
 }
 
 .recipe_items {
@@ -87,4 +111,18 @@ a {
   width: 60%;
   margin: 0 auto;
   gap: 1rem;
+  background: #fff;
+}
+
+.login-form {
+  width: 60%;
+  margin: 0 auto;
+  padding: 1rem;
+  border: 1px solid #888;
+}
+
+.login-input {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
 }
