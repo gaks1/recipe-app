@@ -60,6 +60,10 @@
 - **Can make recipe public**: Users can make a recipe public or keep it private.
 - **Can generate shopping list**: Users can generate a shopping list from their recipes and foods.
 
+## 🚀 Project Demo <a name="live-demo"></a>
+
+### [Live Project Demo](https://recipe-app-y463.onrender.com/)
+
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
