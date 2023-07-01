@@ -6,7 +6,6 @@ services:
   - type: web
     name: recipe-app
     runtime: ruby
-    plan: free
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
@@ -16,5 +15,9 @@ services:
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
-
+  - type: redis
+    name: redis
+    ipAllowList: []
+    plan: free
+    maxmemoryPolicy: noeviction
 
