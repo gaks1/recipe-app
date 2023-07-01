@@ -1,6 +1,6 @@
 databases:
   - name: postgres
-    user: postgres
+    user: recipe_app
 
 services:
   - type: web
